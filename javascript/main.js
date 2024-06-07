@@ -33,10 +33,29 @@ function Not() {
     alert('Данных нет');
 }
 let arr = [];
-processData(arr, okey, Not)
+processData(arr, okey, Not);
 
 // Задача 3: Авторизация
 // Создайте функцию authorize, которая принимает три параметра: имя пользователя, пароль и две функции колбэк. Если имя пользователя равно "admin" и пароль "1234", вызывается первая функция колбэк, в противном случае вторая.
+
+function authorize(userName, userPass, callback1, callback2) {
+    if (userName === "admin" && userPass === "1234") callback1();
+    else callback2();
+};
+
+function authOk(){
+    alert('Вы победили')
+}
+
+function authNO() {
+    alert("постарайтесь еще")
+}
+
+let name = prompt('введите логин');
+let pass = prompt('Введите пароль');
+
+authorize(name, pass, authOk, authNO);
+
 
 
 
@@ -65,4 +84,4 @@ function startTimer(miliSecond, callback) {
    alert("you win");
    }
    
-   startTimer(2000, callback);
+startTimer(2000, callback);
